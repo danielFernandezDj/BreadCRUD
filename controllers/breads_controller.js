@@ -3,7 +3,7 @@ const breads = express.Router()
 const Bread = require('../models/bread.js')
 // const bread = require('../models/bread.js')
 
-// INDEX _______________________________________________________________
+// INDEX 
 breads.get('/', (req, res) => {
   res.render('Index',
     {
@@ -43,7 +43,5 @@ breads.post('/', (req, res) => {
   Bread.push(req.body)
   res.redirect('/breads')
 })
-
-
 
 module.exports = breads
