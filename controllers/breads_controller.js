@@ -26,7 +26,7 @@ breads.get('/:arrayIndex', (req, res) => {
       bread: Bread[req.params.arrayIndex]
     })
   } else {
-    res.send(`<h1 style='color: red;'> 404! </h1>`)
+    res.send(`<h1> 404! </h1>`)
   }
 })
 

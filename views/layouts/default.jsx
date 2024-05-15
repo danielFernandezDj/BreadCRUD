@@ -10,6 +10,7 @@ function Default(html) {
       {/* <!-- normalize & skeleton links --> */}
       <link rel="stylesheet" href="/main.css" />
     </head>
+    
     <body>
       <div className="wrapper">
         <header>
