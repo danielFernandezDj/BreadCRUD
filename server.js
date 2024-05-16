@@ -16,13 +16,14 @@ app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
 // CONNECT TO MONGODB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log('Connected to MongoDB:', process.env.MONGO_URI);
     })
     .catch((error) => {
         console.error('Error connecting to MongoDB:', error);
     });
+
 
 // ROUTES
 app.get('/', (req, res) => {
@@ -40,7 +41,7 @@ app.listen(PORT, () => {
 
 // 404 Page
 app.get('*', (req, res) => {
-    res.status(404).send(`<h1>404</h1>`)
+    res.status(404).send('404')
 })
 
 
