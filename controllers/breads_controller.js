@@ -27,6 +27,9 @@ breads.get('/:id', (req, res) => {
         bread: foundBread
       })
     })
+    .catch(err => {
+      res.status(404).send('404')
+    })
 })
 
 // EDIT
