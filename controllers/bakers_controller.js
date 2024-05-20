@@ -7,7 +7,7 @@ const bakerSeedData = require('../models/baker_seed.js')
 // INDEX
 baker.get('/', (req, res) => {
     Baker.find()
-    .populate('breads')
+        .populate('breads')
         .then(foundBakers => {
             res.send(foundBakers)
         })
@@ -17,6 +17,17 @@ baker.get('/', (req, res) => {
 baker.get('/data/seed', (req, res) => {
     Baker.insertMany(bakerSeedData)
         .then(res.redirect('/breads'))
+})
+
+// Show: 
+baker.get('/:id', (req, res) => {
+    Baker.findById(req.params.id)
+        .populate('breads')
+        .then(foundBaker => {
+            res.render('bakerShow', {
+                baker: foundBaker
+            })
+        })
 })
 
 // export

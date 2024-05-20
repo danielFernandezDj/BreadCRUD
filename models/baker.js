@@ -1,7 +1,7 @@
 // dependencies
 const mongoose = require('mongoose')
 const { Schema } = mongoose
-const Bread = require('./bread') // !NEw Changes
+const Bread = require('./bread') 
 
 // schema
 const bakerSchema = new Schema({
@@ -18,7 +18,7 @@ const bakerSchema = new Schema({
 }, { toJSON: { virtuals: true } })
 
 // Virtual's
-bakerSchema.virtual('breads', { // !NEw Changes
+bakerSchema.virtual('breads', { 
     ref: 'Bread',
     localField: '_id',
     foreignField: 'baker'
