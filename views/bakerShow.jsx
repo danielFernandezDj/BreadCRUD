@@ -8,8 +8,8 @@ function Show({ baker }) {
             <p>{baker.name} has been baking with us since {baker.startDate.getFullYear()}</p>
             <p>About {baker.name}: {baker.bio}</p>
             <h3>Breads {baker.name} has baked</h3>
-            
-            {/* <ul>
+
+            <ul>
                 {
                     baker.breads.map((bread) => {
                         return (
@@ -19,7 +19,7 @@ function Show({ baker }) {
                         )
                     })
                 }
-            </ul> */}
+            </ul>
 
             <form action={`/bakers/${baker.id}?_method=DELETE`} method="POST">
                 <input type="submit" value="DELETE" />
