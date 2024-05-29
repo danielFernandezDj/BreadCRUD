@@ -16,7 +16,15 @@ baker.get('/', (req, res) => {
 // SEEDS
 baker.get('/data/seed', (req, res) => {
     Baker.insertMany(bakerSeedData)
-        .then(res.redirect('/breads'))
+        .then(() => {
+            res.redirect('/breads')
+        })
+        .catch((err) => {
+            res.status(400).json({
+                message: 'Seed unsuccessful',
+                error: err
+            })
+        })
 })
 
 // Show: 
