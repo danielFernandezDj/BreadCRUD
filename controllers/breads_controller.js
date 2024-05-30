@@ -38,7 +38,7 @@ breads.get('/:id', (req, res) => {
       })
     })
     .catch(err => {
-      res.status(404).send('404')
+      res.status(404).send('Cant get there:', 404)
     })
 })
 

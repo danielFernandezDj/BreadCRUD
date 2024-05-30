@@ -1,7 +1,7 @@
 // dependencies
 const express = require('express')
 const baker = express.Router()
-const BakerData = require('../models/baker.js')
+const Baker = require('../models/baker.js')
 const bakerSeedData = require('../models/baker_seed.js')
 
 // INDEX
@@ -22,7 +22,7 @@ baker.get('/data/seed', (req, res) => {
         .catch((err) => {
             res.status(400).json({
                 message: 'Seed unsuccessful',
-                error: err
+                error: err.message
             })
         })
 })
